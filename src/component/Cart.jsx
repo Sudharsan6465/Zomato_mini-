@@ -7,7 +7,7 @@ function Cart({ cart, remove, updateQty }) {
   const total = subtotal + tax;
 
   return (
-    <div className="page">
+    <div className="page" style={{margin : "10px"}}>
       <h2>Your Cart</h2>
       {cart.length === 0 ? (
         <p>Cart is empty. <Link to="/">Go back to Menu</Link></p>

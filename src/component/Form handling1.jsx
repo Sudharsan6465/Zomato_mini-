@@ -1,32 +1,29 @@
-import React, { useRef } from "react";
+import React, { useState } from "react"
+function Form()
+{
+  const [name , setname] = useState("")
+  const [pass , setpass] = useState("")
+  const handle = (e) =>{
+    e.preventDefault()
+  }
 
-function LoginForm() {
-  // Refs for email and password inputs
-  const emailInputRef = useRef(null);
-  const passwordInputRef = useRef(null);
+  const print = () =>
+  {
+    console.log(name)
+    console.log(pass)
+    setname("")
+    setpass("")
+  }
 
-  // Handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  return(
+    <form onSubmit={handle}>
+      Name : <input type="text" value={name} onChange = {(e) => {setname(e.target.value)}}/>
+      <br/><br/>
+      Password : <input type="password" value={pass} onChange = {(e) => {setpass(e.target.value)}}/>
+      <br/><br/>
+      <button onClick={print}>Submit</button>
+    </form>
+  )
+}
 
-    // Get values from refs
-    const formData = {
-      email: emailInputRef.current.value,
-      password: passwordInputRef.current.value,
-    };
-
-    // Log the form data
-    console.log("Email:", formData.email);
-    console.log("Password: " , formData.password)
-
-    // Clear fields
-    emailInputRef.current.value = "";
-    passwordInputRef.current.value = "";
-
-    // Set focus back to email field
-    emailInputRef.current.focus();
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
+export default Form

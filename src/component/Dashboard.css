@@ -1,6 +1,9 @@
+.navbar{
+  margin: 0;
+}
 .page {
   padding: 20px;
-  text-align: center;
+  
 }
 
 .page-title {
@@ -11,23 +14,11 @@
 
 .items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2 , 1fr);
   gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+  justify-items: center;
 }
 
-.card {
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
 
 .product-image {
   width: 100px;

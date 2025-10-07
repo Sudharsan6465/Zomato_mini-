@@ -1,22 +1,11 @@
-import React from "react";
-import { ThemeProvider, useTheme } from "./ThemeContext";
-
-function ThemedButton() {
-  const { theme, toggleTheme } = useTheme(); // 1
-  return (
-    <button onClick={toggleTheme}>
-      Current theme: {theme}
-    </button>
-  );
+import Form from "./component/Form handling1"
+function App1()
+{
+  return(
+    <div>
+      <Form/>
+    </div>
+  )
 }
 
-export default function App1() {
-  return (
-    <ThemeProvider>        {/* 2 */}
-      <div>
-        <h1>My app</h1>
-        <ThemedButton />
-      </div>
-    </ThemeProvider>
-  );
-}
+export default App1
